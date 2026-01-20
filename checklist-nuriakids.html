@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist HANEN 0-4 años | @nuria_kids</title>
+    <style>
+        :root {
+            --primary: #FF6B9D;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --bg: #FFFDF8;
+            --text: #2D3436;
+            --red-flag: #E53E3E;
+            --warning: #F0B429;
+            --success: #0C6E5A;
+            --moderator-bg: #FFF3CD;
+            --moderator-border: #F0B429;
+            --red-flag-bg: #FED7D7;
+            --red-flag-border: #E53E3E;
+            --warning-bg: #FEF5E7;
+            --warning-border: #F0B429;
+            --success-bg: #E8F8F5;
+            --success-border: #0C6E5A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), #FF8FB1);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .logo {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: white;
+            color: var(--primary);
+            border-radius: 50%;
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 60px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .step {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--secondary);
+        }
+
+        .step-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: var(--text);
+        }
+
+        .info-box {
+            background: var(--moderator-bg);
+            border: 1px solid var(--moderator-border);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .question-block {
+            background: #F8FAFC;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .question-title {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        input[type="radio"] {
+            width: 20px;
+            height: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .risk-result {
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        .risk-high {
+            background: var(--red-flag-bg);
+            border: 1px solid var(--red-flag-border);
+            color: var(--red-flag);
+        }
+
+        .risk-medium {
+            background: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            color: #B7791F;
+        }
+
+        .risk-low {
+            background: var(--success-bg);
+            border: 1px solid var(--success-border);
+            color: var(--success);
+        }
+
+        .protocol-section {
+            background: white;
+            border: 2px solid var(--secondary);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .protocol-title {
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .exercise-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .exercise-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #E2E8F0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .exercise-list li:last-child {
+            border-bottom: none;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 3px;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .summary-box {
+            background: #F8FAFC;
+            border: 2px solid var(--primary);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .summary-title {
+            font-weight: 800;
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .summary-text {
+            font-size: 14px;
+            white-space: pre-line;
+            line-height: 1.8;
+        }
+
+        .copy-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .copy-btn:hover {
+            background: #3BB4AC;
+        }
+
+        @media (max-width: 768px) {
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .radio-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .step {
+                padding: 20px;
+            }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+    <header>
+        <div class="logo">NK</div>
+        <h1>Checklist HANEN 0-4 años</h1>
+        <p class="tagline">Juntas, llevamos la Logopedia a cada casa, a cada bolsillo y a cada compromiso.</p>
+    </header>
+
+    <!-- PASO 1: DATOS Y SCREENING RÁPIDO -->
+    <div class="step" id="step1">
+        <div class="step-title">
+            <div class="step-number">1</div>
+            <h2>DATOS Y SCREENING RÁPIDO</h2>
+        </div>
+        
+        <div class="info-box">
+            <strong>Instrucciones:</strong> Responde con la edad corregida (si prematuro). Marca SI o NO según lo que observas HOY.
+        </div>
+
+        <div class="form-group">
+            <label>Nombre del peque (opcional):</label>
+            <input type="text" id="nombreNino" placeholder="Ej: Martín">
+        </div>
+
+        <div class="form-group">
+            <label>Edad corregida (en meses):</label>
+            <input type="number" id="edadNino" placeholder="Ej: 22" min="0" max="48">
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">A los 12 meses (si tu peque ya los cumplió):</div>
+            <div class="checkbox-grid">
+                <div>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="respuestaNombre" value="si" id="rn1">
+                            <label for="rn1">SÍ</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="respuestaNombre" value="no" id="rn2">
+                            <label for="rn2">NO</label>
+                        </div>
+                    </div>
+                    <label>¿Se volvía al llamar su nombre?</label>
+                </div>
+                
+                <div>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="gestoProtod" value="si" id="gp1">
+                            <label for="gp1">SÍ</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="gestoProtod" value="no" id="gp2">
+                            <label for="gp2">NO</label>
+                        </div>
+                    </div>
+                    <label>¿Señalaba para compartir (protodeclarativo)?</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">A los 18 meses (si tu peque ya los cumplió):</div>
+            <div class="checkbox-grid">
+                <div>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="orden2pasos" value="si" id="o2p1">
+                            <label for="o2p1">SÍ</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="orden2pasos" value="no" id="o2p2">
+                            <label for="o2p2">NO</label>
+                        </div>
+                    </div>
+                    <label>¿Entiende órdenes de 2 pasos sin gesto?</label>
+                </div>
+                
+                <div>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="vocabulario50" value="si" id="v50_1">
+                            <label for="v50_1">SÍ</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="vocabulario50" value="no" id="v50_2">
+                            <label for="v50_2">NO</label>
+                        </div>
+                    </div>
+                    <label>¿Usa 50+ palabras espontáneas?</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">A los 24 meses (si tu peque ya los cumplió):</div>
+            <div class="checkbox-grid">
+                <div>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="combinacion2p" value="si" id="c2p1">
+                            <label for="c2p1">SÍ</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="combinacion2p" value="no" id="c2p2">
+                            <label for="c2p2">NO</label>
+                        </div>
+                    </div>
+                    <label>¿Combina 2 palabras regularmente?</label>
+                </div>
+                
+                <div>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="imitacionFonema" value="si" id="if1">
+                            <label for="if1">SÍ</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="imitacionFonema" value="no" id="if2">
+                            <label for="if2">NO</label>
+                        </div>
+                    </div>
+                    <label>¿Imita fonemas nuevos (pam, tú)?</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">A los 36 meses (si tu peque ya los cumplió):</div>
+            <div class="checkbox-grid">
+                <div>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="inteligibilidad75" value="si" id="i75_1">
+                            <label for="i75_1">SÍ</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="inteligibilidad75" value="no" id="i75_2">
+                            <label for="i75_2">NO</label>
+                        </div>
+                    </div>
+                    <label>¿Lo entienden extraños 75% del tiempo?</label>
+                </div>
+                
+                <div>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="frases4p" value="si" id="f4p1">
+                            <label for="f4p1">SÍ</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="frases4p" value="no" id="f4p2">
+                            <label for="f4p2">NO</label>
+                        </div>
+                    </div>
+                    <label>¿Usa frases de 4+ palabras?</label>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn" onclick="calcularResultado()">CALCULAR RESULTADO</button>
+        
+        <div id="resultadoPaso1" class="hidden"></div>
+    </div>
+
+    <!-- PASO 2: SEÑALES ROJAS Y ACCIÓN (solo si 2+ NO) -->
+    <div class="step hidden" id="step2">
+        <div class="step-title">
+            <div class="step-number">2</div>
+            <h2>🚨 SEÑALES ROJAS Y ACCIÓN INMEDIATA</h2>
+        </div>
+
+        <div class="info-box">
+            <strong>Importante:</strong> Las siguientes señales NO son "tardanza", son indicadores de riesgo que requieren evaluación profesional.
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">Marca si observas ALGUNA de estas situaciones:</div>
+            
+            <div style="margin-top: 15px;">
+                <label style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 15px;">
+                    <input type="checkbox" id="perdidaHabilidades" onchange="actualizarRiesgo()">
+                    <div>
+                        <strong>PÉRDIDA DE HABILIDADES</strong><br>
+                        <small>Si tu peque balbuceaba, usaba gestos o palabras y LO HA PERDIDO entre 15-24 meses.</small>
+                    </div>
+                </label>
+
+                <label style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 15px;">
+                    <input type="checkbox" id="noRespuestaNombre" onchange="actualizarRiesgo()">
+                    <div>
+                        <strong>NO RESPUESTA AL NOMBRE</strong><br>
+                        <small>A los 12 meses con audición normal, no se vuelve al llamado.</small>
+                    </div>
+                </label>
+
+                <label style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 15px;">
+                    <input type="checkbox" id="noGestos" onchange="actualizarRiesgo()">
+                    <div>
+                        <strong>AUSENCIA DE GESTOS</strong><br>
+                        <small>No señala, no da, no muestra objetivos a los 12+ meses.</small>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <div id="alertaRiesgo" class="risk-result hidden"></div>
+    </div>
+
+    <!-- PASO 3: PROTOCOLO DE INTERVENCIÓN (solo si 0-1 NO) -->
+    <div class="step hidden" id="step3">
+        <div class="step-title">
+            <div class="step-number">3</div>
+            <h2>✅ PROTOCOLO DE ESTIMULACIÓN HANEN</h2>
+        </div>
+
+        <div class="info-box">
+            <strong>Instrucciones:</strong> Sigue el protocolo según la edad de tu peque. Marca cada día que completas el ejercicio.
+        </div>
+
+        <div class="protocol-section">
+            <div class="protocol-title">VENTANA 12-18 MESES: Protocolo "Eco de Gestos"</div>
+            <ul class="exercise-list">
+                <li>
+                    <input type="checkbox" id="eco1">
+                    <div>
+                        <strong>Día 1-7:</strong> Di "¡Mira!" + seña tu nariz. Espera 5s. Si no imita, usa su mano para ayudar.
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" id="eco2">
+                    <div>
+                        <strong>Día 8-14:</strong> Hazlo con 3 gestos diferentes (nariz, orejas, boca). Anota % de éxito.
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" id="eco3">
+                    <div>
+                        <strong>Día 15-21:</strong> Añade sonido al gesto (¡mú! al tocar boca). Busca imitación vocal.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="protocol-section">
+            <div class="protocol-title">VENTANA 18-24 MESES: Protocolo "Sujeto-Verbo"</div>
+            <ul class="exercise-list">
+                <li>
+                    <input type="checkbox" id="sv1">
+                    <div>
+                        <strong>Día 1-7:</strong> Él dice "agua". Tú modelas: "niño bebe". Repite 10 veces/día.
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" id="sv2">
+                    <div>
+                        <strong>Día 8-14:</strong> Usa 2 juguetes: "Papá come. Mamá bebe". Pide que señale quién actúa.
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" id="sv3">
+                    <div>
+                        <strong>Día 15-21:</strong> AnímalO a combinar: dale 2 palabras, pide que una frase (p.ej., "mama agua").
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="protocol-section">
+            <div class="protocol-title">VENTANA 24-36 MESES: Protocolo "Narrativa 2-eventos"</div>
+            <ul class="exercise-list">
+                <li>
+                    <input type="checkbox" id="narr1">
+                    <div>
+                        <strong>Día 1-7:</strong> Usa 2 muñecos. Haz secuencia: "Papá come. Luego bebe". Pide que repita.
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" id="narr2">
+                    <div>
+                        <strong>Día 8-14:</strong> Usa 2 ilustraciones simples. Pídele que cuente lo que ve (3 palabras mínimo).
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" id="narr3">
+                    <div>
+                        <strong>Día 15-21:</strong> Graba 1 video/semana de 2 min. Revisa progreso de frases nuevas.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="info-box" style="margin-top: 20px;">
+            <strong>¿Y si no progresa en 21 días?</strong> Si completas el protocolo y no ves cambios, revisa el Paso 2 (Señales Rojas) o considera una valoración profesional.
+        </div>
+
+        <button class="btn" onclick="generarResumen()">GENERAR MI RESUMEN</button>
+    </div>
+
+    <!-- RESUMEN FINAL -->
+    <div class="summary-box hidden" id="resumenFinal">
+        <div class="summary-title">📋 RESUMEN DE TU EVALUACIÓN</div>
+        <div class="summary-text" id="resumenTexto"></div>
+        <button class="copy-btn" onclick="copiarResumen()">COPIAR RESUMEN</button>
+        <button class="copy-btn" style="background: var(--primary); margin-left: 10px;" onclick="guardarLocal()">GUARDAR EN NAVEGADOR</button>
+    </div>
+
+    <script>
+        // LÓGICA DE CÁLCULO
+        function calcularResultado() {
+            const edad = parseInt(document.getElementById('edadNino').value);
+            if (!edad || edad < 6 || edad > 48) {
+                alert('Por favor ingresa una edad válida (6-48 meses)');
+                return;
+            }
+
+            // Contar NOs
+            let noCount = 0;
+            const radios = document.querySelectorAll('input[type="radio"]');
+            const groups = {};
+            
+            radios.forEach(radio => {
+                if (radio.checked) {
+                    if (!groups[radio.name]) groups[radio.name] = [];
+                    groups[radio.name].push(radio.value);
+                }
+            });
+
+            Object.values(groups).forEach(values => {
+                if (values.includes('no')) noCount++;
+            });
+
+            // Mostrar resultado
+            const resultadoDiv = document.getElementById('resultadoPaso1');
+            resultadoDiv.classList.remove('hidden');
+            
+            let mensaje = '';
+            let clase = '';
+            
+            if (noCount >= 2) {
+                mensaje = `🚨 RIESGO DETECTADO: Tienes ${noCount} hitos no alcanzados. Tu peque necesita evaluación logopédica. Revisa el Paso 2.`;
+                clase = 'risk-high';
+                document.getElementById('step2').classList.remove('hidden');
+                document.getElementById('step3').classList.add('hidden');
+            } else if (noCount === 1) {
+                mensaje = `⚠️ OBSERVACIÓN ESTRECHA: Tienes 1 hito no alcanzado. Aplica el protocolo de estimulación (Paso 3) y re-evalúa en 21 días.`;
+                clase = 'risk-medium';
+                document.getElementById('step2').classList.add('hidden');
+                document.getElementById('step3').classList.remove('hidden');
+                mostrarProtocoloPorEdad(edad);
+            } else {
+                mensaje = `✅ DESARROLLO ADECUADO: Todos los hitos evidenciados. Usa el protocolo de estimulación (Paso 3) para seguir potenciando.`;
+                clase = 'risk-low';
+                document.getElementById('step2').classList.add('hidden');
+                document.getElementById('step3').classList.remove('hidden');
+                mostrarProtocoloPorEdad(edad);
+            }
+            
+            resultadoDiv.innerHTML = `<div class="risk-result ${clase}">${mensaje}</div>`;
+            resultadoDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function mostrarProtocoloPorEdad(edad) {
+            // Ocultar todos los protocolos primero
+            document.querySelectorAll('.protocol-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Mostrar el apropiado
+            if (edad <= 18) {
+                document.querySelector('.protocol-section:nth-child(1)').style.display = 'block';
+            } else if (edad <= 24) {
+                document.querySelector('.protocol-section:nth-child(2)').style.display = 'block';
+            } else if (edad <= 36) {
+                document.querySelector('.protocol-section:nth-child(3)').style.display = 'block';
+            }
+        }
+
+        function actualizarRiesgo() {
+            const perdida = document.getElementById('perdidaHabilidades').checked;
+            const noRespuesta = document.getElementById('noRespuestaNombre').checked;
+            const noGestos = document.getElementById('noGestos').checked;
+            
+            const alertaDiv = document.getElementById('alertaRiesgo');
+            alertaDiv.classList.remove('hidden');
+            
+            if (perdida || noRespuesta || noGestos) {
+                alertaDiv.innerHTML = `
+                    <div class="risk-result risk-high">
+                        <strong>🚨 SEÑAL ROJA DETECTADA</strong><br><br>
+                        Requieres valoración inmediata por un logopeda. No esperes.<br><br>
+                        <strong>Acción ahora:</strong><br>
+                        📞 Llama a tu centro de salud o logopeda de referencia.<br>
+                        🔗 Busca profesional en: <a href="https://www.aal-logopediabarcelona.com" target="_blank">aal-logopediabarcelona.com</a><br><br>
+                        <strong>Menciona:</strong> "Cribado digital positivo en señales de riesgo temprano."
+                    </div>
+                `;
+            } else {
+                alertaDiv.innerHTML = `
+                    <div class="risk-result risk-medium">
+                        <strong>⚠️ CONTINÚA OBSERVANDO</strong><br><br>
+                        No tienes señales rojas, pero los hitos no alcanzados requieren estimulación. Sigue al Paso 3.
+                    </div>
+                `;
+            }
+        }
+
+        function generarResumen() {
+            const nombre = document.getElementById('nombreNino').value || 'Tu peque';
+            const edad = document.getElementById('edadNino').value;
+            const resumenDiv = document.getElementById('resumenFinal');
+            const resumenTexto = document.getElementById('resumenTexto');
+
+            // Calcular hitos no alcanzados
+            let noCount = 0;
+            const radios = document.querySelectorAll('input[type="radio"]:checked');
+            radios.forEach(radio => {
+                if (radio.value === 'no') noCount++;
+            });
+
+            // Calcular señales rojas
+            const senalesRojas = [];
+            if (document.getElementById('perdidaHabilidades').checked) senalesRojas.push('Pérdida de habilidades');
+            if (document.getElementById('noRespuestaNombre').checked) senalesRojas.push('No respuesta al nombre');
+            if (document.getElementById('noGestos').checked) senalesRojas.push('Ausencia de gestos');
+
+            // Generar protocolos completados
+            const protocolos = [];
+            for (let i = 1; i <= 9; i++) {
+                const cb = document.getElementById('eco' + i) || document.getElementById('sv' + i) || document.getElementById('narr' + i);
+                if (cb && cb.checked) protocolos.push(`Ejercicio ${i}`);
+            }
+
+            let mensaje = `CHECKLIST HANEN 0-4 AÑOS
+Fecha: ${new Date().toLocaleDateString('es-ES')}
+Nombre: ${nombre}
+Edad: ${edad} meses
+
+🔍 HITOS NO ALCANZADOS: ${noCount}
+
+🚨 SEÑALES ROJAS DETECTADAS: ${senalesRojas.length > 0 ? senalesRojas.join(', ') : 'Ninguna'}
+
+✅ PROTOCOLO COMPLETADO: ${protocolos.length}/9 ejercicios
+
+RECOMENDACIÓN:
+${noCount >= 2 ? 'Valoración logopédica necesaria.' : 
+  noCount === 1 ? 'Continúa estimulación y re-evalúa en 21 días.' : 
+  'Desarrollo adecuado, mantén estimulación.'}
+
+🔗 Descarga el checklist completo: https://bit.ly/checklist-lenguaje-04`;
+
+            resumenTexto.textContent = mensaje;
+            resumenDiv.classList.remove('hidden');
+            resumenDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function copiarResumen() {
+            const texto = document.getElementById('resumenTexto').textContent;
+            navigator.clipboard.writeText(texto).then(() => {
+                alert('✅ Resumen copiado al portapapeles');
+            });
+        }
+
+        function guardarLocal() {
+            const data = {
+                nombre: document.getElementById('nombreNino').value,
+                edad: document.getElementById('edadNino').value,
+                fecha: new Date().toISOString(),
+                resultados: document.getElementById('resumenTexto').textContent
+            };
+            localStorage.setItem('checklistResultado', JSON.stringify(data));
+            alert('✅ Resultado guardado en tu navegador');
+        }
+
+        // Autocalcular al cambiar radio buttons
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', () => {
+                // Limpiar alertas anteriores si existen
+                const alertas = document.querySelectorAll('.risk-result');
+                alertas.forEach(alerta => {
+                    if (alerta.parentNode.id === 'resultadoPaso1') {
+                        alerta.remove();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
